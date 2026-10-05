@@ -3,19 +3,19 @@
 Pengembangan project *Rotating 3D Cube* Pertemuan 4 menjadi object bertekstur dengan pencahayaan
 **ambient, diffuse, dan specular** yang dapat diamati dan dikontrol secara interaktif.
 
-## Identitas
+**Identitas**
 - Kelompok 15
 - Anggota  :
 1. Nadine Aulia Putri Fanani - 5025231206
 2. Salwa Fitri Fadiyah Hanan - 5025231220
 
 
-## Cara Menjalankan
+**Cara Menjalankan**
 Aplikasi memakai ES Modules dan `fetch` untuk memuat shader, sehingga **harus dibuka lewat web server lokal**
 
 Gunakan ekstensi *Live Server* di VS Code. Dapat juga di-deploy ke GitHub Pages.
 
-## Struktur Folder
+**Struktur Folder**
 ```
 index.html        halaman + canvas + HUD
 style.css
@@ -33,7 +33,7 @@ shaders/
   marker.vert / marker.frag  marker posisi light
 assets/textures/  uv-grid.png, bricks.png, checker.png (128x128)
 
-## Daftar Kontrol
+**Daftar Kontrol** 
 | Tombol | Fungsi |
 |---|---|
 | J / L | Light X − / + |
@@ -55,7 +55,7 @@ assets/textures/  uv-grid.png, bricks.png, checker.png (128x128)
 | Drag mouse / panah | Orbit kamera (untuk mengamati specular dari sudut berbeda) |
 | Scroll | Zoom |
 
-## Texture & Parameter Lighting
+**Texture & Parameter Lighting**
 - Texture: `uv-grid.png` (gradien U/V, grid, panah, penanda sudut), `bricks.png`, `checker.png`; semua 128×128, dimuat dengan `UNPACK_FLIP_Y_WEBGL` agar UV (0,0) = kiri-bawah.
 - Setiap sisi cube punya 4 vertex sendiri (24 vertex) sehingga normal dan UV per sisi benar. Atribut disimpan di tiga buffer terpisah: Position (location 0), Normal (1), UV (2).
 - Lighting dihitung di fragment shader pada world space:
@@ -66,13 +66,13 @@ assets/textures/  uv-grid.png, bricks.png, checker.png (128x128)
 - Normal ditransformasi dengan normal matrix (inverse-transpose model 3×3).
 - Depth test aktif (`DEPTH_TEST`, `LEQUAL`); cube berputar di sumbu X dan Y.
 
-## Challenge yang Dikerjakan
+**Challenge yang Dikerjakan**
 1. **Light position marker** – kubus kecil kuning di posisi light (shader terpisah tanpa lighting).
 2. **Moving light otomatis** – posisi light dari keyboard diputar mengelilingi sumbu Y (tombol M).
 3. **Multiple textures** – tiga texture, ganti dengan T.
 4. **UV scrolling** – offset UV bertambah terhadap waktu (tombol S); paling jelas terlihat bersama wrapping.
 
-## Hasil Eksperimen
+**Hasil Eksperimen**
 > Tabel di bawah berisi pengamatan yang diharapkan dari rumus shader:
 
 | Eksperimen | Nilai / Mode | Pengamatan |
@@ -93,7 +93,7 @@ assets/textures/  uv-grid.png, bricks.png, checker.png (128x128)
 | Lighting | Specular | Hanya bercak highlight putih; berubah saat kamera diorbit |
 | Lighting | All | Gabungan texture, shading, dan highlight |
 
-## Kendala yang Ditemukan
+**Kendala yang Ditemukan**
 - Wrapping tidak terlihat karena UV hanya 0–1 → ditambahkan UV tiling (R) dan UV scrolling.
 - Texture terbalik secara vertikal → diatasi dengan `UNPACK_FLIP_Y_WEBGL`.
 - Filtering tidak memakai mipmap sehingga bisa tampak berkelip saat cube jauh/kecil.
