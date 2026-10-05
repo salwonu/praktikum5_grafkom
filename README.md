@@ -12,15 +12,8 @@ Pengembangan project *Rotating 3D Cube* Pertemuan 4 menjadi object bertekstur de
 
 ## Cara Menjalankan
 Aplikasi memakai ES Modules dan `fetch` untuk memuat shader, sehingga **harus dibuka lewat web server lokal**
-(bukan klik dua kali `index.html`).
 
-```bash
-# salah satu
-python3 -m http.server 8000      # lalu buka http://localhost:8000
-npx serve .
-```
-Atau gunakan ekstensi *Live Server* di VS Code. Dapat juga di-deploy ke GitHub Pages.
-Butuh browser dengan dukungan WebGL2 (Chrome, Edge, Firefox terbaru).
+Gunakan ekstensi *Live Server* di VS Code. Dapat juga di-deploy ke GitHub Pages.
 
 ## Struktur Folder
 ```
@@ -39,8 +32,6 @@ shaders/
   lit.vert / lit.frag        cube bertekstur + lighting
   marker.vert / marker.frag  marker posisi light
 assets/textures/  uv-grid.png, bricks.png, checker.png (128x128)
-screenshots/      screenshot aplikasi
-```
 
 ## Daftar Kontrol
 | Tombol | Fungsi |
@@ -82,7 +73,7 @@ screenshots/      screenshot aplikasi
 4. **UV scrolling** – offset UV bertambah terhadap waktu (tombol S); paling jelas terlihat bersama wrapping.
 
 ## Hasil Eksperimen
-> Tabel di bawah berisi pengamatan yang diharapkan dari rumus shader; **sesuaikan/konfirmasi dengan hasil nyata saat dijalankan** dan tambahkan screenshot di folder `screenshots/`.
+> Tabel di bawah berisi pengamatan yang diharapkan dari rumus shader:
 
 | Eksperimen | Nilai / Mode | Pengamatan |
 |---|---|---|
@@ -103,8 +94,8 @@ screenshots/      screenshot aplikasi
 | Lighting | All | Gabungan texture, shading, dan highlight |
 
 ## Kendala yang Ditemukan
-_(Isi sesuai pengalaman, misalnya:)_
-- Shader tidak bisa dimuat saat `index.html` dibuka langsung dari file → harus memakai web server lokal.
 - Wrapping tidak terlihat karena UV hanya 0–1 → ditambahkan UV tiling (R) dan UV scrolling.
 - Texture terbalik secara vertikal → diatasi dengan `UNPACK_FLIP_Y_WEBGL`.
 - Filtering tidak memakai mipmap sehingga bisa tampak berkelip saat cube jauh/kecil.
+
+
