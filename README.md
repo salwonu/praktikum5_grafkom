@@ -11,6 +11,7 @@ Pengembangan project *Rotating 3D Cube* Pertemuan 4 menjadi object bertekstur de
 
 
 **Cara Menjalankan**
+
 Aplikasi memakai ES Modules dan `fetch` untuk memuat shader, sehingga **harus dibuka lewat web server lokal**
 
 Gunakan ekstensi *Live Server* di VS Code. Dapat juga di-deploy ke GitHub Pages.
@@ -72,7 +73,8 @@ assets/textures/  uv-grid.png, bricks.png, checker.png (128x128)
 3. **Multiple textures** – tiga texture, ganti dengan T.
 4. **UV scrolling** – offset UV bertambah terhadap waktu (tombol S); paling jelas terlihat bersama wrapping.
 
-**Hasil Eksperimen**
+# **Hasil Eksperimen**
+
 > Tabel di bawah berisi pengamatan yang diharapkan dari rumus shader:
 
 | Eksperimen | Nilai / Mode | Pengamatan |
