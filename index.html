@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Praktikum 5 - Textured Cube + Lighting (WebGL2)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="glcanvas"></canvas>
+  <pre id="hud"></pre>
+  <details id="help" open>
+    <summary>Kontrol</summary>
+    <pre>J / L   Light X -/+
+I / K   Light Y +/-
+U / O   Light Z -/+
+1 Ambient Only     2 Diffuse Only
+3 Specular Only    4 Ambient+Diffuse
+5 All Components
+A  Ambient 0 / 0.2 / 0.5
+H  Shininess 4 / 32 / 128
+F  Filtering LINEAR / NEAREST
+W  Wrapping REPEAT / CLAMP / MIRROR
+R  UV tiling 1x / 2x / 3x
+T  Ganti texture   (challenge)
+M  Moving light    (challenge)
+S  UV scrolling    (challenge)
+B  Light marker    (challenge)
+Space  Pause rotasi
+Drag mouse / Panah  Orbit kamera
+Scroll  Zoom</pre>
+  </details>
+  <div id="error" hidden></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
